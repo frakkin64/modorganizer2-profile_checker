@@ -119,8 +119,22 @@ class ProfileCheckerPlugin(mobase.IPluginTool):
                     continue
                 
                 mod_object = self.__organizer.modList().getMod(mod_name)
-                if mod_object and hasattr(mod_object, "isSeparator") and mod_object.isSeparator():
-                    continue
+                if mod_object:
+                    ## skip separators
+                    if hasattr(mod_object, "isSeparator") and mod_object.isSeparator():
+                        continue
+
+                    ## skip backups
+                    if hasattr(mod_object, "isBackup") and mod_object.isBackup():
+                        continue
+
+                    ## skip overwrite
+                    if hasattr(mod_object, "isOverwrite") and mod_object.isOverwrite():
+                        continue
+                    
+                    ## skip unmanaged
+                    if hasattr(mod_object, "isForeign") and mod_object.isForeign():
+                       continue
                     
                 filtered_mods.append(mod_name)
                 
