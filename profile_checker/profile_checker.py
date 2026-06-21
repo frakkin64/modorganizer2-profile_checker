@@ -88,7 +88,7 @@ class ProfileCheckerPlugin(mobase.IPluginTool):
         return "Checks if selected mods are active in other profiles before deletion."
 
     def version(self) -> mobase.VersionInfo:
-        return mobase.VersionInfo(1, 0, 0, mobase.ReleaseType.FINAL)
+        return mobase.VersionInfo(1, 1, 0, mobase.ReleaseType.FINAL)
 
     def isActive(self) -> bool:
         return True
@@ -134,7 +134,7 @@ class ProfileCheckerPlugin(mobase.IPluginTool):
                     
                     ## skip unmanaged
                     if hasattr(mod_object, "isForeign") and mod_object.isForeign():
-                       continue
+                        continue
                     
                 filtered_mods.append(mod_name)
                 
