@@ -138,7 +138,7 @@ class ProfileCheckerPlugin(mobase.IPluginTool):
                     
                 filtered_mods.append(mod_name)
                 
-            all_mods = sorted(filtered_mods)
+            all_mods = sorted(filtered_mods, key=str.casefold)
             
             if not all_mods:
                 QMessageBox.information(self.__parentWidget, "No Mods Found", "No valid installed mods found in this instance.")
