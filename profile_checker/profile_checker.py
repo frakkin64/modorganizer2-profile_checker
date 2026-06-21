@@ -159,7 +159,6 @@ class ProfileCheckerPlugin(mobase.IPluginTool):
             return
 
         # Get profiles folder for current instance
-        current_profile_name = self.__organizer.profile().name()
         base_instance_path = self.__organizer.basePath()
         profiles_path = os.path.join(base_instance_path, "profiles")
 
