@@ -29,7 +29,7 @@ class MultiModSelectionDialog(QDialog):
         buttons.rejected.connect(self.reject)
         layout.addWidget(buttons)
 
-    def get_selected_mods(self):
+    def get_selected_mods(self) -> list[str]:
         return [item.text() for item in self.list_widget.selectedItems()]
 
 
